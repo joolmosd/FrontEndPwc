@@ -1,0 +1,15 @@
+a{
+   color : #464646;
+}
+a:hover{
+    transition: text-decoration .35s ease-in-out;
+    text-decoration: 2px solid underline transparent;
+    text-underline-offset: 2px;
+    color: #d93954;    
+    text-decoration-color: #d93954 !important;
+    cursor: pointer;
+}
+
+nav ul a:hover {
+     background-color: rgba(255,255,255); 
+}

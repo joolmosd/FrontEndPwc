@@ -1,0 +1,76 @@
+  <body>
+    <div class="row">
+      <div class="col s12 l4 offset-l4">
+        <div class="card">
+          <div class="card-content">
+            <h4 class="card-title center-align">Register</h4>
+            <form [formGroup]="fgValidacion" (ngSubmit)="saveUser()">
+
+              <div class="row">
+                <div class="input-field col s6">
+                    <input formControlName="names" id="names" type="text" class="validate">
+                    <label for="names">Names</label>
+                    <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                  </div>
+                  <div class="input-field col s6">
+                    <input formControlName="lastNames" id="lastNames" type="text" class="validate">
+                    <label for="lastNames">Last Names</label>
+                    <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                  </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input formControlName="email"
+                   (focusout)="existsUserName()" id="email" type="email" class="validate">
+                  <label for="email">Email</label>
+                  <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s6">
+                  <input formControlName="password" type="password" id="password" class="validate" />
+                  <label for="password">Password</label>
+                  <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                </div>
+              
+                <div class="input-field col s6">
+                  <input formControlName="confirmPassword" 
+                  (focusout)="passwordMatch()" type="password" id="confirmPassword" class="validate" />
+                  <label for="confirmPassword">Confirm Password</label>
+                  <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input formControlName="country" id="country" type="text" class="validate">
+                  <label for="country">Country</label>
+                  <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <input formControlName="jobTitle" id="jobTitle" type="text" class="validate">
+                  <label for="jobTitle">Job Title</label>
+                  <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                </div>
+              </div>
+
+              <div class="row center-align">
+                <button [disabled]="!fgValidacion.valid" class="btn" type="submit"
+                  name="action">Ingresar
+                  <i class="material-icons right">send</i>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  
+  

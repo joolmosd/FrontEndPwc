@@ -1,0 +1,15 @@
+body{
+    background-color: bisque;
+}
+
+.amber {
+    background-color: white;
+}
+img{
+    height: 100%;
+}
+
+.container{
+    width: 100%;
+    max-width: 1536px;
+}
