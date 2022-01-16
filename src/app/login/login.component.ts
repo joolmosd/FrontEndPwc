@@ -16,7 +16,6 @@ export class LoginComponent implements OnInit {
 
   invalidLogin = false;
   loginSuccess = false;
-  cookie!: any;
   private identificationUser!: any;
   
 
@@ -32,8 +31,7 @@ export class LoginComponent implements OnInit {
   }
 
   identificarUsuario() {
-    
-      
+     
     this.authenticationService.login(this.formLogin.controls.email.value, this.formLogin.controls.password.value).subscribe(
       
       (result) =>{
@@ -44,10 +42,10 @@ export class LoginComponent implements OnInit {
 
           this.identificationUser = result.id;
           console.log(this.identificationUser);
-          console.log("RESPONSE:-->"+result);
+          //console.log("RESPONSE:-->"+result);
           accesToken = this.authenticationService.createBasicAuthToken(this.formLogin.controls.email.value,this.identificationUser);
           console.log(accesToken);
-          this.authenticationService.registerSuccessfulLogin(this.identificationUser);
+          this.authenticationService.registerSuccessfulLogin(accesToken);
           console.log("accesToken agregado al sesion Storage");
           this.loginSuccesfull();
           this.router.navigate(['/main']);

@@ -4,6 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
+import { CrudUserComponent } from './crud-user/crud-user.component';
+import { MainComponent } from './main/main.component';
 
 const routes: Routes = [
   {
@@ -22,6 +24,14 @@ const routes: Routes = [
   {
     path: 'registro',
     component: RegistroComponent
+  },
+  {
+    path: 'crudUser',
+    component: CrudUserComponent
+  },
+  {
+    path: 'main',
+    component: MainComponent
   },
   {
     path: 'error',

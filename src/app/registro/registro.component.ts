@@ -54,9 +54,10 @@ export class RegistroComponent implements OnInit {
   saveUser(): void {
     
     const data = {
+      email: this.fgValidacion.controls.email.value,
+      id: this.fgValidacion.controls.email.value,
       names: this.fgValidacion.controls.names.value,
       lastNames: this.fgValidacion.controls.lastNames.value,
-      email: this.fgValidacion.controls.email.value,
       password: this.fgValidacion.controls.password.value,
       country: this.fgValidacion.controls.country.value,
       jobTitle: this.fgValidacion.controls.jobTitle.value,
@@ -69,7 +70,7 @@ export class RegistroComponent implements OnInit {
           this.submitted = true;
           //console.log(data);
           this.registerSuccesful();
-          this.sendEmail();
+          //this.sendEmail();
           this.router.navigate(['/login']);
         },
         error => {

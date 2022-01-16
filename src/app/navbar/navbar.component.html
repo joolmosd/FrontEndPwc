@@ -1,13 +1,11 @@
 <nav>
-    <div class="nav-wrapper" style="background-color: rgb(255,255,255)">
-      <a href="#" class="brand-logo"> 
-        <img src="./../../assets/Pwc logo.svg" width="60" style="margin-left: 20px;">
-      </a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a routerLink="/registro">Registrar</a></li>
-        <li><a routerLink="/login">Log In
-            <i class="fas fa-sign-in-alt"></i>
-        </a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="nav-wrapper">
+    <a routerLink="/index" class="brand-logo"><img src="./../../assets/Pwc logo.svg" width="60" style="margin-left: 20px;"></a>
+    <ul class="right hide-on-med-and-down">
+      <li *ngIf="isLogin"><a routerLink="/registro"><i class="material-icons left">account_circle</i>Register</a></li>
+      <li *ngIf="isLogin" ><a routerLink="/login"><i class="material-icons right">arrow_forward</i>Sign In</a></li>
+      <li *ngIf="!isLogin"><a routerLink="/crudUser"><i  class="material-icons right">face</i>Update Profile</a></li>
+      <li *ngIf="!isLogin"><a routerLink="/index" (click)="logout()"><i  class="material-icons right">arrow_back</i>Log Out</a></li>
+    </ul>
+  </div>
+</nav>

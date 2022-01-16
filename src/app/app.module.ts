@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from './registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CrudUserComponent } from './crud-user/crud-user.component';
+import { MainComponent } from './main/main.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     NavbarComponent,
     NotFoundComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    CrudUserComponent,
+    MainComponent
   ],
   imports: [
     BrowserModule,

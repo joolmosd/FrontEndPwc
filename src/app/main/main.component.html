@@ -1,0 +1,64 @@
+  <body>
+    <div class="container">
+        <div class="carousel carousel-slider center" id="carousel-auto"  data-indicators="true">
+            <div class="carousel-fixed-item center">
+            </div>
+            <div class="carousel-item" href="#one!">
+                <img src="../../assets/slide1.webp">
+            </div>
+            <div class="carousel-item" href="#two!">
+                <img src="../../assets/sldie02.gif">
+            </div>
+            <div class="carousel-item" href="#three!">
+                <img src="../../assets/slide3.webp">
+            </div>
+          </div>
+    </div>
+
+
+    <div class="modal" id="publicationModal">
+
+        <div class="modal-content">
+
+
+            <div class="card">
+                <div class="card-content">
+                  <h4 class="card-title center-align">Create Publication</h4>
+                  <form [formGroup]="formPublication" (ngSubmit)="savePublication()">
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <i class="material-icons prefix">import_contacts</i>
+                        <input formControlName="description" type="text" id="description" class="validate" />
+                        <label for="description">Description</label>
+                        <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="input-field col s12">
+                        <i class="material-icons prefix">image</i>
+                        <input formControlName="Img" type="text" id="Img" class="validate" />
+                        <label for="Img">Url</label>
+                        <span class="helper-text" data-error="Wrong" data-success="Right">Is Requiered</span>
+                      </div>
+                    </div>
+                    <div class="row center-align">
+                      <button [disabled]="!formPublication.valid" class="btn waves-effect waves-light btn modal-close" type="submit"
+                        name="action">Send
+                        <i class="material-icons right">send</i>
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+
+        </div>
+
+    </div>
+
+    <div class="fixed-action-btn toolbar">
+        <a href="#publicationModal"  class="btn-floating btn-large waves-effect btnFloat btn modal-trigger"><i
+            class="material-icons">add</i></a>
+      </div>
+
+</body>
